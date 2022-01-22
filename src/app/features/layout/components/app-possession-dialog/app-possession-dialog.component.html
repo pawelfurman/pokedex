@@ -1,0 +1,19 @@
+<p-dialog position="top" [visible]="visibility" [modal]="true" [style]="{width: '80%', maxWidth: '1000px'}"
+    [draggable]="false" [resizable]="false" [closable]="false">
+    <ng-template pTemplate="header">
+        <h2>Possession</h2>
+    </ng-template>
+
+    <div class="grid" *ngIf="fullPossession$ | async as items">
+        <div class="col-6 sm:col-4 md:col-3 lg:col-2 text-center" *ngFor="let item of items">
+            <span class="fake-link" (click)="navigateToPokemon(item.name)">
+                <img [src]="item.imageUrl" alt="">
+                <strong>{{item.name | titlecase}}</strong>
+            </span>
+        </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="closePossession()" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

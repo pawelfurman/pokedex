@@ -1,0 +1,15 @@
+.fake-link {
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+
+  strong {
+    display: block;
+    text-align: center;
+  }
+
+  img {
+    display: inline-block;
+    text-align: center;
+  }
+}

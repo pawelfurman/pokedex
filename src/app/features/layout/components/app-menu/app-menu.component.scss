@@ -1,0 +1,26 @@
+:host{
+    display: block;
+    position: relative;
+}
+.app-header-menu{
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    a{
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        margin-left: 5px;
+        &:first-child{
+            margin-left: 0;
+        }
+
+
+        &.is-active{
+            background: var(--surface-a)
+        }
+    }
+
+}

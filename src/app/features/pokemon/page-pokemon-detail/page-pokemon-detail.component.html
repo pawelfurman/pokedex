@@ -1,0 +1,95 @@
+<div class="grid" *ngIf="detail.id">
+    <div class="col-12 md:col-6">
+        <p-card>
+
+            <ng-template pTemplate="title">
+                <div class="flex justify-content-between align-items-center">
+                    <span>{{detail.name | titlecase}}</span>
+                    <app-possession-status [pokemonId]="detail.id"></app-possession-status>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <div class=" grid" *ngIf="detail.id">
+                    <div class="col-6 sm:col-3">
+                        <app-image-placeholder width="100%" [imageUrl]="detail.imageUrlFront"></app-image-placeholder>
+                    </div>
+                    <div class="col-6 sm:col-3">
+                        <app-image-placeholder width="100%" [imageUrl]="detail.imageUrlBack"></app-image-placeholder>
+                    </div>
+                    <div class="col-6 sm:col-3">
+                        <app-image-placeholder width="100%" [imageUrl]="detail.imageUrlFrontShiny">
+                        </app-image-placeholder>
+                    </div>
+                    <div class="col-6 sm:col-3">
+                        <app-image-placeholder width="100%" [imageUrl]="detail.imageUrlBackShiny">
+                        </app-image-placeholder>
+                    </div>
+                </div>
+            </ng-template>
+
+            <p-table responsiveLayout="scroll" [value]="[1]">
+                <ng-template pTemplate="body" let-label>
+
+                    <tr>
+                        <td><strong>ID</strong></td>
+                        <td class="text-right">{{detail.id}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Weight</strong></td>
+                        <td class="text-right">{{detail.weight}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Height</strong></td>
+                        <td class="text-right">{{detail.height}}</td>
+                    </tr>
+
+                </ng-template>
+
+            </p-table>
+            <ng-template pTemplate="footer">
+                <app-catch-button [pokemon]="pokemon"></app-catch-button>
+                <app-want-to-catch-button [pokemon]="pokemon"></app-want-to-catch-button>
+            </ng-template>
+
+        </p-card>
+
+
+
+        <p-card styleClass="mt-4" header="Stats">
+            <p-table responsiveLayout="scroll" [value]="detail.stats" styleClass="mt-4">
+
+                <ng-template pTemplate="body" let-stat let-rowIndex="rowIndex">
+
+                    <tr>
+                        <td><strong>{{stat.name}}</strong></td>
+                        <td class="text-right">{{stat.base}} / {{stat.effort}}</td>
+                    </tr>
+
+                </ng-template>
+            </p-table>
+        </p-card>
+
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="Abilities">
+            <p-table responsiveLayout="scroll" [value]="detail.abilities" styleClass="mt-4">
+                <ng-template pTemplate="body" let-ability let-rowIndex="rowIndex">
+                    <tr>
+                        <td>{{rowIndex + 1}}</td>
+                        <td class="text-right">{{ability.name | titlecase}}</td>
+                    </tr>
+
+                </ng-template>
+            </p-table>
+        </p-card>
+        <p-card header="Moves" styleClass="mt-4">
+            <ng-container *ngFor="let move of detail.moves">
+                <p-tag severity="info" [value]="move"></p-tag>
+            </ng-container>
+
+        </p-card>
+    </div>
+</div>

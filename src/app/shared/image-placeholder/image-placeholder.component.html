@@ -1,0 +1,4 @@
+<div class="image-placeholder-wrapper" [style.width]="width" [style.paddingTop]="'100%'">
+    <p-skeleton [shape]="shape" width="100%" height="100%" *ngIf="!loaded"></p-skeleton>
+    <img [src]="imageUrl" alt="" [attr.loaded]="loaded || null">
+</div>

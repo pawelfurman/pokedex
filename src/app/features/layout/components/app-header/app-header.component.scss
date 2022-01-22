@@ -1,0 +1,13 @@
+nav {
+  padding: 15px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-app-loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}

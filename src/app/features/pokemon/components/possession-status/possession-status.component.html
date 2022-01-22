@@ -1,0 +1,4 @@
+<p-tag (click)="removeFromPossession()" *ngIf="isPossessed$ | async" severity="success" value="Possession"
+    icon="pi pi-times"></p-tag>
+<p-tag (click)="removeFromWishlist()" *ngIf="isOnWishlist$ | async" severity="warning" value="Wishlist"
+    icon="pi pi-times"></p-tag>

@@ -1,0 +1,12 @@
+.app-header-addon {
+  &-counter {
+    cursor: pointer;
+    position: relative;
+    p-badge {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(-10%, -40%);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="app-header-addon flex flex-no-wrap">
+    <div class="app-header-addon-counter" (click)="togglePossession()">
+        <i class="pi pi-database mr-4 p-text-secondary" style="font-size: 2rem"></i>
+        <p-badge [value]="possessionSize + ''" [severity]="possessionSeverity" styleClass="mr-2"></p-badge>
+    </div>
+    <div class="app-header-addon-counter" (click)="toggleWishlist()">
+        <i class="pi pi-heart mr-4 p-text-secondary" style="font-size: 2rem"></i>
+        <p-badge [value]="wishlistSize + ''" [severity]="wishlistSeverity" styleClass="mr-2"></p-badge>
+    </div>
+</div>
+
+
+<app-app-wishlist-dialog [visibility]="wishlistVisibility" (close)="closeWishlist()"></app-app-wishlist-dialog>
+<app-app-possession-dialog [visibility]="possessionVisibility" (close)="closePossession()"></app-app-possession-dialog>
