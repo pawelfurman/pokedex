@@ -1,27 +1,32 @@
-# Pokemon
+# Pokedex App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+This project was generated with Angular CLI version 13.0.4.
 
-## Development server
+## Scripts
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm run serve` to run dev server `http://localhost:4200/` with --watch mode enabled
+
+`npm run build` to build the project in `dist/` folder.
+
+`npm run test` to execute the unit tests via Karma/karma-chrome-launcher
+
+`npm run test:coverage` to check code coverage
+
+`npm build:pages` to build before deploy on gh pages
+
+`npm deploy` to deploy on gh pages
+
+`npm e2e` to run e2e test and check app happy paths
+
+`npm compodoc:serve` to run dev server `http://localhost:8080/` with documentation
+
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Remarks
+-   Unit tests are added only for component and only for basic functionalities
+-   E2E tests are added for a few essential paths which have to be covered in order to use application correctly
+-   Documentation is in basic, auto-generated version
