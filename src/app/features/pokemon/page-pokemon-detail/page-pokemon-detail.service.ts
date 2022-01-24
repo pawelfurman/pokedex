@@ -5,13 +5,16 @@ import { environment } from "src/environments/environment"
 import { ApiPokemonDetailResponse, StorePokemonDetailEntry } from "../pokemon.types"
 import { apiPokemonDetailConverter } from "./page-pokemon-detail.converter"
 
+
+/**
+ * Performs CRUD operations for pokemon details api
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class PagePokemonDetailService {
 
   constructor(private http: HttpClient) { }
-
 
   getPokemonDetails(name: string): Observable<StorePokemonDetailEntry> {
     return this.http.get<ApiPokemonDetailResponse>(`${environment.api}/pokemon/${name}`).pipe(

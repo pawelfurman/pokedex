@@ -12,12 +12,12 @@ export const pokemonWishlistFeature = createFeature({
     name: pokemonWishlistFeatureKey,
     reducer: createReducer(
         initialState,
-        on(addPokemonToWishlist, (state, {payload}) => state.indexOf(payload.id) === -1 ? [...state, payload.id].sort() : state),
-        on(removePokemonFromWishlist, (state, {id}) => state.filter((pokemonId: string) => pokemonId !== id))
+        on(addPokemonToWishlist, (state, { payload }) => state.indexOf(payload.id) === -1 ? [...state, payload.id].sort() : state),
+        on(removePokemonFromWishlist, (state, { id }) => state.filter((pokemonId: string) => pokemonId !== id))
     )
 })
 
 
 export const {
-   selectPokemonWishlistState
+    selectPokemonWishlistState
 } = pokemonWishlistFeature

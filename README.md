@@ -20,13 +20,12 @@ This project was generated with Angular CLI version 13.0.4.
 
 `npm compodoc:serve` to run dev server `http://localhost:8080/` with documentation
 
-
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-
 ## Remarks
--   Unit tests are added only for component and only for basic functionalities
--   E2E tests are added for a few essential paths which have to be covered in order to use application correctly
--   Documentation is in basic, auto-generated version
+
+- Unit tests are added only for component and only for basic functionalities
+- E2E tests are added for a few essential paths which have to be covered in order to use application correctly
+- Documentation is in the very basic version, covers only the most important parts of application

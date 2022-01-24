@@ -5,6 +5,14 @@ import { StorePokemonDetailEntry, StorePokemonListItem } from "../pokemon.types"
 import { clearPokemonDetail } from "../store/actions/pokemon-detail.actions"
 import { selectPokemonDetailState } from "../store/reducers/pokemon-detail.reducer"
 
+
+/**
+ * Displays details view of Pokemon
+ * 
+ * clears the detail state in ngrx store onDestroy
+ * 
+ * TODO: Split into smaller, easier to test components
+ */
 @Component({
   selector: 'app-page-pokemon-detail',
   templateUrl: './page-pokemon-detail.component.html',
@@ -21,7 +29,6 @@ export class PagePokemonDetailComponent implements OnInit, OnDestroy {
   constructor(private store: Store, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-
     this.details$.subscribe((detail) => {
       this.detail = detail
       this.pokemon = {

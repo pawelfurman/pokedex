@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core'
 
+/**
+ * Provides simple preloading functionality. Before image is loaded it shows p-skeleton component from PrimeNg
+ * Adds some fake timeout to make image appearing more ux friendly
+ */
 @Component({
   selector: 'app-image-placeholder',
   templateUrl: './image-placeholder.component.html',
@@ -15,16 +19,16 @@ export class ImagePlaceholderComponent implements OnInit {
 
   loaded: boolean = false;
 
-  constructor(private cd:ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    const image = new Image();
-    image.src = this.imageUrl;
+    const image = new Image()
+    image.src = this.imageUrl
 
 
     image.onload = () => {
       setTimeout(() => {
-        this.loaded = true;
+        this.loaded = true
         this.cd.detectChanges()
       }, Math.floor(Math.random() * (1000 - 250)) + 250)
     }

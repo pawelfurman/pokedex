@@ -34,18 +34,18 @@ export const pokemonListFeature = createFeature({
     reducer: createReducer(
         initialState,
         on(fetchPokemonList, (state) => {
-            return {...state, entities: [], requestStatus: RequestStatus.PROCESSING};
+            return { ...state, entities: [], requestStatus: RequestStatus.PROCESSING }
         }),
         on(fetchPokemonListSuccess, (state, payload) => {
-           
-            return {...state, entities: [...payload.results], entitiesCount: payload.count, requestStatus: RequestStatus.PROCESSED}
+
+            return { ...state, entities: [...payload.results], entitiesCount: payload.count, requestStatus: RequestStatus.PROCESSED }
         }),
         on(fetchPokemonListFailure, (state) => {
-            return {...state, requestStatus: RequestStatus.ERROR};
+            return { ...state, requestStatus: RequestStatus.ERROR }
         }),
         on(updateSearchParams, (state, payload) => {
-            const limit = payload.limit === undefined ? state.searchParams.limit : payload.limit;
-            const offset = payload.offset === undefined ? state.searchParams.offset : payload.offset;
+            const limit = payload.limit === undefined ? state.searchParams.limit : payload.limit
+            const offset = payload.offset === undefined ? state.searchParams.offset : payload.offset
             return {
                 ...state,
                 searchParams: {
@@ -55,7 +55,7 @@ export const pokemonListFeature = createFeature({
             }
         })
     )
-    
+
 })
 
 export const {

@@ -1,5 +1,5 @@
-import { createSelector } from "@ngrx/store";
-import { selectSearchParams } from "../reducers/pokemon-list.reducer";
+import { createSelector } from "@ngrx/store"
+import { selectSearchParams } from "../reducers/pokemon-list.reducer"
 
 
 export const selectPokemonSearchParamsLimit = createSelector(

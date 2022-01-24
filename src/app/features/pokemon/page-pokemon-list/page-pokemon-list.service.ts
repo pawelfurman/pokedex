@@ -6,6 +6,9 @@ import { ApiPokemonListResponse, StorePokemonListEntry } from "../pokemon.types"
 import { PokemonListSearchParams } from "../store/reducers/pokemon-list.reducer"
 import { apiPokemonListConverter } from "./page-pokemon-list.converter"
 
+/**
+ * Performs CRUD operations for list of pokemons api
+ */
 @Injectable({
   providedIn: 'root'
 })

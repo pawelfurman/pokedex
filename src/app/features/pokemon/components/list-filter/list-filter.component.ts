@@ -1,5 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 
+
+/**
+ * Displays simple input field taken from PrimeNg library.
+ * Emits event after any input value change.
+ */
 @Component({
   selector: 'app-list-filter',
   templateUrl: './list-filter.component.html',
@@ -7,6 +12,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 })
 export class ListFilterComponent implements OnInit {
 
+  /**
+   * Emits current state of input field, in lowercase, on input any change.
+   */
   @Output() filter: EventEmitter<string> = new EventEmitter<string>()
 
   constructor() { }

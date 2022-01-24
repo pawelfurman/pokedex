@@ -1,9 +1,9 @@
-import { createAction, props } from "@ngrx/store";
-import { StorePokemonDetailEntry } from "../../pokemon.types";
+import { createAction, props } from "@ngrx/store"
+import { StorePokemonDetailEntry } from "../../pokemon.types"
 
 export const fetchPokemonDetail = createAction(
     '[Pokemon Detail] Fetch',
-    props<{name:string}>()
+    props<{ name: string }>()
 )
 
 export const fetchPokemonDetailSuccess = createAction(

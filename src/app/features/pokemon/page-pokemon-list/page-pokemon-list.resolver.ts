@@ -5,6 +5,12 @@ import { catchError, EMPTY, Observable, of, switchMap, take } from 'rxjs'
 import { RequestStatus } from "src/app/app.types"
 import { fetchPokemonList } from "../store/actions/pokemon-list.actions"
 import { selectRequestStatus } from "../store/reducers/pokemon-list.reducer"
+
+/**
+ * Waits for specific data to resolve the route. Redirect before resolving if there is an error.
+ * 
+ * TODO: this is error prone, find better way, use Resolve and Guard in order to achive the same effect, or use api service directly
+ */
 @Injectable({
   providedIn: 'root'
 })

@@ -4,6 +4,13 @@ import { Subscription } from "rxjs"
 import { selectPokemonPossessionSize } from "src/app/features/pokemon/store/selectors/pokemon-possession.selectors"
 import { selectPokemonWishlistSize } from "src/app/features/pokemon/store/selectors/pokemon-wishlist.selectors"
 
+
+/**
+ * Collects information about wishlist and possessing state, displays size of both of this list,
+ * gives possibility to open popup and the check exact, current state of user lists
+ * 
+ * TODO: split functionality into at two components
+ */
 @Component({
   selector: 'app-app-menu-addon',
   templateUrl: './app-menu-addon.component.html',
@@ -36,12 +43,12 @@ export class AppMenuAddonComponent implements OnInit {
 
   }
 
-  get possessionSeverity() {
+  get possessionSeverity(): string {
     return this.possessionSize > 0 ? 'success' : 'primary'
   }
 
 
-  get wishlistSeverity() {
+  get wishlistSeverity(): string {
     return this.wishlistSize > 0 ? 'success' : 'primary'
   }
 
@@ -52,19 +59,19 @@ export class AppMenuAddonComponent implements OnInit {
   }
 
 
-  toggleWishlist() {
+  toggleWishlist(): void {
     this.wishlistVisibility = !this.wishlistVisibility
   }
 
-  closeWishlist() {
+  closeWishlist(): void {
     this.wishlistVisibility = false
   }
 
-  togglePossession() {
+  togglePossession(): void {
     this.possessionVisibility = !this.possessionVisibility
   }
 
-  closePossession() {
+  closePossession(): void {
     this.possessionVisibility = false
   }
 

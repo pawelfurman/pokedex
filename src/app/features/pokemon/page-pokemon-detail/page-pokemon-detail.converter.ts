@@ -1,5 +1,10 @@
 import { ApiPokemonDetailResponse, StorePokemonDetailEntry } from "../pokemon.types"
 
+/**
+ * Converts the API response data type to the 'store friendly' data type
+ * @param {ApiPokemonDetailResponse} input data from the server
+ * @returns {StorePokemonDetailEntry} store friendly typed data
+ */
 export const apiPokemonDetailConverter = (input: ApiPokemonDetailResponse): StorePokemonDetailEntry => {
     return {
         abilities: input.abilities.map((ability: any) => ({ name: ability.ability.name })),

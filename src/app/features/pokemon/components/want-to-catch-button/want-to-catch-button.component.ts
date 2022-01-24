@@ -6,7 +6,9 @@ import { addPokemonToWishlist } from "../../store/actions/pokemon-wishlist.actio
 import { selectPokemonPossessionState } from "../../store/reducers/pokemon-possession.reducer"
 import { selectPokemonWishlistState } from "../../store/reducers/pokemon-wishlist.reducer"
 
-
+/**
+ * Provides functionality to add Pokemon to wishlist by clicking on button and dispatching catchPokemon action
+ */
 @Component({
   selector: 'app-want-to-catch-button',
   templateUrl: './want-to-catch-button.component.html',
@@ -14,6 +16,11 @@ import { selectPokemonWishlistState } from "../../store/reducers/pokemon-wishlis
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WantToCatchButtonComponent implements OnInit {
+
+  /**
+   * Gets pokemon, it is neccessary to get StorePokemonListItem instead of only id
+   * because pokemon is saved on the cache list (the 'pokemonCache' feature key) as well.
+   */
   @Input() pokemon: StorePokemonListItem = {} as StorePokemonListItem
 
   pokemonWhitelist$: Observable<string[]> = this.store.select(selectPokemonWishlistState);
@@ -33,7 +40,4 @@ export class WantToCatchButtonComponent implements OnInit {
   add() {
     this.store.dispatch(addPokemonToWishlist({ payload: this.pokemon }))
   }
-
-
-
 }

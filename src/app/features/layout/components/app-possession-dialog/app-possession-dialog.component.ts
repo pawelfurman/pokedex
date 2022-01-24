@@ -5,6 +5,12 @@ import { Observable } from "rxjs"
 import { PokemonCacheItem } from "src/app/features/pokemon/store/reducers/pokemon-cache.reducer"
 import { selectFullPossession, selectFullWishlist } from "src/app/features/pokemon/store/selectors/pokemon-cache.selectors"
 
+
+/**
+ * Displays current state of possession list
+ * 
+ * TODO: Merge it with AppWishlistDialogComponent
+ */
 @Component({
   selector: 'app-app-possession-dialog',
   templateUrl: './app-possession-dialog.component.html',
@@ -13,7 +19,15 @@ import { selectFullPossession, selectFullWishlist } from "src/app/features/pokem
 })
 export class AppPossessionDialogComponent implements OnInit {
 
+
+  /**
+   * visibility control, controlled by parent component
+   */
   @Input() visibility: boolean = false;
+
+  /**
+   * emits event in order to close popup
+   */
   @Output() close: EventEmitter<void> = new EventEmitter<void>()
 
   fullPossession$: Observable<PokemonCacheItem[]> = this.store.select(selectFullPossession)
@@ -23,11 +37,11 @@ export class AppPossessionDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closePossession() {
+  closePossession(): void {
     this.close.emit()
   }
 
-  navigateToPokemon(name: string) {
+  navigateToPokemon(name: string): void {
     this.router.navigate(['/', 'pokemon', name])
     this.close.emit()
   }

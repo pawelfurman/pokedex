@@ -1,1 +1,2 @@
-<p-paginator [pageLinkSize]="3" [rows]="(limit$ | async) || 0" [totalRecords]="(totalRecords$ | async) || 0" (onPageChange)="paginate($event)" [rowsPerPageOptions]="[25, 50, 100]"></p-paginator>
+<p-paginator [pageLinkSize]="3" [rows]="(limit$ | async) || 0" [totalRecords]="(totalRecords$ | async) || 0"
+    (onPageChange)="paginate($event)" [rowsPerPageOptions]="[25, 50, 100]"></p-paginator>

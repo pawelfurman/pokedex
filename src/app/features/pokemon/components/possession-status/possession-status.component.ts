@@ -11,6 +11,11 @@ import {
   OnInit,
 } from '@angular/core'
 
+/**
+ * Displays p-tag from PrimeNg library based on store data for specific pokemon
+ * 
+ * TODO: should be more generic, component name suggests that it is something about possession only while it is connected with both possession and wishlist
+ */
 @Component({
   selector: 'app-possession-status',
   templateUrl: './possession-status.component.html',
@@ -18,6 +23,10 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PossessionStatusComponent implements OnInit {
+
+  /**
+   * It is neccessary for comparing current pokemon Id with the possession and the wishlist state in store.
+   */
   @Input() pokemonId: string = '';
 
   wishlist$: Observable<string[]> = this.store.select(

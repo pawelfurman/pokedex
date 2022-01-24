@@ -5,6 +5,9 @@ import { StorePokemonListItem } from "../../pokemon.types"
 import { catchPokemon } from "../../store/actions/pokemon-possession.actions"
 import { selectPokemonPossessionState } from "../../store/reducers/pokemon-possession.reducer"
 
+/**
+ * Provides functionality to add pokemon to the possession list by clicking on button and dispatching catchPokemon action
+ */
 @Component({
   selector: 'app-catch-button',
   templateUrl: './catch-button.component.html',
@@ -13,6 +16,10 @@ import { selectPokemonPossessionState } from "../../store/reducers/pokemon-posse
 })
 export class CatchButtonComponent implements OnInit {
 
+  /**
+   * Gets pokemon, it is neccessary to get StorePokemonListItem instead of only id
+   * because pokemon is saved on the cache list (the 'pokemonCache' feature key) as well.
+   */
   @Input() pokemon: StorePokemonListItem = {} as StorePokemonListItem;
 
   pokemonPossession$: Observable<string[]> = this.store.select(selectPokemonPossessionState);
@@ -27,7 +34,7 @@ export class CatchButtonComponent implements OnInit {
   }
 
 
-  catch() {
+  catch(): void {
     this.store.dispatch(catchPokemon({ payload: this.pokemon }))
   }
 
