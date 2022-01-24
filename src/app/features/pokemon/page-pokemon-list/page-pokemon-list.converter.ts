@@ -1,3 +1,4 @@
+import { environment } from "src/environments/environment"
 import { ApiPokemonListResponse, ApiPokemonListResults, StorePokemonListEntry, StorePokemonListItem } from "../pokemon.types"
 
 export const apiPokemonListConverter = (input: ApiPokemonListResponse): StorePokemonListEntry => {
@@ -6,7 +7,7 @@ export const apiPokemonListConverter = (input: ApiPokemonListResponse): StorePok
         return {
             ...entity,
             id,
-            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+            imageUrl: `${environment.storage}/${id}.png`
         }
     })
     return { ...input, results: newList }
