@@ -1,0 +1,15 @@
+<div>
+    Child Component:
+    <p>
+        The annimal here is: <strong>{{animals.kind}}</strong> <input type="text" [(ngModel)]="animals.kind">
+    </p>
+    <hr>
+    <app-grandchild></app-grandchild>
+    <app-grandchild></app-grandchild>
+    <app-grandchild></app-grandchild>
+
+    <hr>
+    The content: <br /><br>
+    <ng-content></ng-content>
+
+</div>
