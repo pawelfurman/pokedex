@@ -1,0 +1,13 @@
+<p-card header="Third Animation - Query">
+
+    <div class="playground">
+        <div class="point" [@screen]="state" (@screen.start)="buttonDisabled=true"
+            (@screen.done)="buttonDisabled=false">
+            <p *ngIf="show">Text Content</p>
+        </div>
+    </div>
+    <p class="mt-4">state: {{state}}</p>
+    <button class="mt-4" pButton (click)="click()" [disabled]="buttonDisabled">Run</button>
+
+
+</p-card>

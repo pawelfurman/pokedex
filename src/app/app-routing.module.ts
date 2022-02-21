@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { PageAnimationsComponent } from './features/animations/page-animations/page-animations.component'
+import { FirstViewComponent } from './features/animations/router-animation/first-view/first-view.component'
+import { SecondViewComponent } from './features/animations/router-animation/second-view/second-view.component'
+import { ThirdViewComponent } from './features/animations/router-animation/third-view/third-view.component'
 import { DashboardComponent } from "./features/dashboard/dashboard.component"
 import { PageDiComponent } from './features/di/page-di/page-di.component'
 import { PageErrorComponent } from "./features/error/page-error/page-error.component"
@@ -30,6 +34,35 @@ const routes: Routes = [
   {
     path: 'di',
     component: PageDiComponent
+  },
+
+  {
+    path: 'animations',
+    component: PageAnimationsComponent,
+    children: [
+      {
+        path: 'first-view',
+        component: FirstViewComponent,
+        data: {
+          animation: 'firstViewPage'
+        }
+      },
+      {
+        path: 'second-view',
+        component: SecondViewComponent,
+        data: {
+          animation: 'secondViewPage'
+        }
+      },
+      {
+        path: 'third-view',
+        component: ThirdViewComponent,
+        data: {
+          animation: 'thirdViewPage'
+        }
+      }
+    ]
+
   },
   {
     path: '**',

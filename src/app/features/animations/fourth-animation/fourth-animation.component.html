@@ -1,0 +1,8 @@
+<p-card header="Fourth Animation - Group">
+    <div class="playground" [@move]="state" (@move.start)="buttonDisabled=true" (@move.done)="buttonDisabled=false">
+        <div class="point"></div>
+    </div>
+
+    <p class="mt-4">state: {{state}}</p>
+    <button class="mt-4" pButton (click)="click()" [disabled]="buttonDisabled">Run</button>
+</p-card>

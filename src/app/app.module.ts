@@ -12,6 +12,7 @@ import { PageErrorModule } from "./features/error/page-error/page-error.module"
 import { LayoutModule } from "./features/layout/layout.module"
 import { PokemonModule } from "./features/pokemon/pokemon.module"
 import { DiModule } from './features/di/di.module'
+import { AnimationsModule } from './features/animations/animations.module'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DiModule } from './features/di/di.module'
     LayoutModule,
     DashboardModule,
     PageErrorModule,
-    DiModule
+    DiModule,
+    AnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

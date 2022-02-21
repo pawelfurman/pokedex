@@ -1,0 +1,9 @@
+<p-card header="First Animation">
+
+    <div class="square" [@leftRight]="moveSquareState">
+        {{moveSquareState}}
+    </div>
+
+    <button class="mt-4" pButton (click)="moveSquare()">Run</button>
+
+</p-card>

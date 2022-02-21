@@ -1,0 +1,22 @@
+.playground {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  position: relative;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  border-radius: 10px;
+  left: 0%;
+  top: 0%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

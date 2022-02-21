@@ -1,0 +1,10 @@
+<p-card header="Fifth Animation - Increment">
+
+    <button class="mt-4" pButton (click)="addItems(5)">Add 5</button>
+
+    <div class="list">
+        <ul [@list]="items.length">
+            <li *ngFor="let i of items">{{i}}</li>
+        </ul>
+    </div>
+</p-card>

@@ -1,0 +1,9 @@
+<p-card header="Sixth Animation - Tricky Increment">
+
+    <button class="mt-4" pButton (click)="addItems(25)">{{items.length? 'Remove' : 'Add'}} 25</button>
+    <div class="list">
+        <ul [@list]="items.length">
+            <li *ngFor="let i of items">{{i}}</li>
+        </ul>
+    </div>
+</p-card>

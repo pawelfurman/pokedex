@@ -1,0 +1,13 @@
+<p-card header="Router Animation">
+    <div class="playground">
+        <a href="" [routerLink]="[ '/', 'animations', 'first-view']">First View</a> <br />
+        <a href="" [routerLink]="[ '/', 'animations', 'second-view']">Second View</a> <br />
+        <a href="" [routerLink]="[ '/', 'animations', 'third-view']">Third View</a> <br />
+        <br>
+        Outlet:
+        <div [@routeAnimations]="prepareRoute(outlet)">
+            {{prepareRoute(outlet)}}
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+    </div>
+</p-card>

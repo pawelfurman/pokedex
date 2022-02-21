@@ -1,0 +1,26 @@
+.list {
+  width: 400px;
+  height: 400px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 0px 3px #000;
+    color: #ddd;
+    font-size: 24px;
+    margin: 10px;
+  }
+}

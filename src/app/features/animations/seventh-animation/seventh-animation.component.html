@@ -1,0 +1,16 @@
+<p-card header="Seventh Animation - Animate Child">
+
+    <div class="playground">
+        <div class="square" [@moveParent]="state" (@moveParent.start)="buttonDisabled=true"
+            (@moveParent.done)="buttonDisabled=false">
+            <div class="square-child" [@moveChild]="state">
+
+            </div>
+        </div>
+    </div>
+
+    <p class="mt-4">state: {{state}}</p>
+
+    <button class="mt-4" pButton (click)="run()" [disabled]="buttonDisabled">Run</button>
+
+</p-card>
