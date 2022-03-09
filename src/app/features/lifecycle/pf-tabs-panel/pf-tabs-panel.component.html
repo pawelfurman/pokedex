@@ -1,0 +1,16 @@
+<ng-template #defaultButtons let-test="test">
+    <ul *ngIf="tabs">
+        <li *ngFor="let tab of tabs"><button (click)="selectTab(tab)" pButton
+                [ngClass]="tab.active ? 'p-button-primary':'p-button-secondary'">{{tab.title}} {{test}}</button></li>
+    </ul>
+</ng-template>
+
+
+
+<ng-container *ngTemplateOutlet="(buttonsTemplate || defaultButtons); context: {test: 1}">
+
+</ng-container>
+
+
+
+<ng-content></ng-content>

@@ -1,0 +1,51 @@
+<p-card header="Repeater">
+    <form action="" [formGroup]="form" (submit)="sendForm()">
+
+        <!-- <ng-container formArrayName="users">
+            <ng-container *ngFor="let user of users.controls; let userIndex = index">
+                <div class="grid" [formGroupName]="userIndex">
+                    <div class="col-4">
+                        <input pInputText type="text" formControlName="firstName">
+                    </div>
+                    <div class="col-4">
+                        <input pInputText type="text" formControlName="secondName">
+                    </div>
+                    <div class="col-4">
+                        <input pInputText type="text" formControlName="age">
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container> -->
+
+        <ng-template #template let-groupNumber="groupNumber">
+
+            <ng-container formArrayName="users">
+                <ng-container [formGroupName]="groupNumber">
+                    <div class="grid">
+                        <div class="col-4">
+                            <input pInputText type="text" formControlName="firstName">
+                        </div>
+                        <div class="col-4">
+                            <input pInputText type="text" formControlName="secondName">
+                        </div>
+                        <div class="col-4">
+                            <input pInputText type="text" formControlName="age">
+                        </div>
+                        <div class="col-12">
+                            {{users.controls[groupNumber].valid ? 'TAK' : 'NIE'}}
+
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-template>
+
+        <app-pf-repeater-accessor (groupCreator)="createGroup()" [formArray]="users" [template]="template">
+            <h2>Field - repeater</h2>
+        </app-pf-repeater-accessor>
+
+        <br>
+        <br>
+        <button pButton>Save</button>
+    </form>
+</p-card>

@@ -1,0 +1,22 @@
+<div>
+    <h1 #title>{{country}}</h1>
+
+    address:
+    <ng-content select="[city]"></ng-content>
+    <ng-content select="[street]"></ng-content>
+
+
+    <button pButton (click)="simpleClickEvent()">Address Check detection</button>
+
+
+    <div>
+        <br>
+        Dates:
+        <button pButton (click)="addNewDate()">+ Date</button>
+        <ul>
+            <li *ngFor="let date of dates" #dateItem>{{date}}</li>
+        </ul>
+
+    </div>
+
+</div>

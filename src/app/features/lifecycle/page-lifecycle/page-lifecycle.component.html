@@ -1,0 +1,25 @@
+<div class="grid">
+    <div class="col-6">
+        <p-card header="Components">
+            <app-address [country]="country">
+                <p #city city>Krakow</p>
+                <p #street street>Aleja Kijowska</p>
+            </app-address>
+
+            <app-user></app-user>
+            <button pButton (click)="simpleClickEvent()">Check detection</button>
+        </p-card>
+    </div>
+    <div class="col-6">
+        <app-custom-form></app-custom-form>
+    </div>
+
+
+    <div class="col-12">
+        <app-tabs></app-tabs>
+    </div>
+
+    <div class="col-12">
+        <app-pf-repeater></app-pf-repeater>
+    </div>
+</div>

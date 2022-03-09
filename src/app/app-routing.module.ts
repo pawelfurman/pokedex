@@ -7,6 +7,7 @@ import { ThirdViewComponent } from './features/animations/router-animation/third
 import { DashboardComponent } from "./features/dashboard/dashboard.component"
 import { PageDiComponent } from './features/di/page-di/page-di.component'
 import { PageErrorComponent } from "./features/error/page-error/page-error.component"
+import { PageLifecycleComponent } from './features/lifecycle/page-lifecycle/page-lifecycle.component'
 import { PagePokemonDetailComponent } from "./features/pokemon/page-pokemon-detail/page-pokemon-detail.component"
 import { PagePokemonDetailResolver } from "./features/pokemon/page-pokemon-detail/page-pokemon.detail.resolver"
 import { PagePokemonListComponent } from "./features/pokemon/page-pokemon-list/page-pokemon-list.component"
@@ -63,6 +64,10 @@ const routes: Routes = [
       }
     ]
 
+  },
+  {
+    path: 'lifecycle',
+    component: PageLifecycleComponent
   },
   {
     path: '**',

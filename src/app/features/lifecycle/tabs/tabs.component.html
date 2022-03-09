@@ -1,0 +1,29 @@
+<p-card header="Tabs">
+
+
+    <ng-template #customButtons let-test="test">
+        <button (click)="tabs.selectTab(address)" [ngStyle]="{'font-weight': address.active ? '700' : '300'}">address
+            {{test}}</button>
+        <button (click)="tabs.selectTab(contact)"
+            [ngStyle]="{'font-weight': contact.active ? '700' : '300'}">contact</button>
+        <button (click)="tabs.selectTab(about)" [ngStyle]="{'font-weight': about.active ? '700' : '300'}">about</button>
+    </ng-template>
+
+    <app-pf-tabs-panel [buttonsTemplate]="customButtons" #tabs>
+        <app-pf-tab title="Address" [active]="true" #address>
+            <h2>Address</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat adipisci ullam repudiandae error. Rem
+                cumque soluta suscipit eius et eaque.</p>
+        </app-pf-tab>
+        <app-pf-tab title="Contact" #contact>
+            <h2>Contact Info</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laboriosam aliquam doloremque
+                sequi quia earum eligendi soluta quod.</p>
+        </app-pf-tab>
+        <app-pf-tab title="About" #about>
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia!</p>
+        </app-pf-tab>
+    </app-pf-tabs-panel>
+
+</p-card>

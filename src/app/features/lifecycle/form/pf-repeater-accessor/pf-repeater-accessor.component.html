@@ -1,0 +1,13 @@
+<ng-content></ng-content>
+<ng-container *ngFor="let user of formArray.controls; let idx = index">
+    <div class="grid">
+        <div class="col-10">
+            <ng-container *ngTemplateOutlet="template; context: {groupNumber: idx}"></ng-container>
+        </div>
+        <div class="col-2">
+            <button (click)="removeRow(idx)" type="button" pButton class="p-button-danger" tabindex="-1">Remove</button>
+        </div>
+    </div>
+</ng-container>
+
+<button type="button" (click)="addRow()" pButton [disabled]="!formArray.valid">Add User</button>
