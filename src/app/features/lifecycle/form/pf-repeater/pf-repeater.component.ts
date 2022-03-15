@@ -1,6 +1,30 @@
 import { Component, OnInit } from '@angular/core'
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms'
 
+
+
+
+export declare class FormGroupValue<T> extends FormGroup {
+  value: T
+  setValue(value: Partial<T>,
+    options?: {
+      onlySelf?: boolean
+      emitEvent?: boolean
+    }): void
+
+  patchValue(value: Partial<T>, options?: {
+    onlySelf?: boolean
+    emitEvent?: boolean
+    emitModelToViewChange?: boolean
+    emitViewToModelChange?: boolean
+  }): void
+}
+
+type RecursivePartial<T> = {
+  [P in keyof T]?: T[P] extends object ? RecursivePartial<T[P]> : T[P]
+}
+
+
 @Component({
   selector: 'app-pf-repeater',
   templateUrl: './pf-repeater.component.html',
@@ -10,13 +34,15 @@ export class PfRepeaterComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
-  public form!: FormGroup
+  public form!: FormGroupValue<RecursivePartial<{ users: { firstName: string, lastName: string, age: number } }>>
 
 
   ngOnInit(): void {
     this.form = this.fb.group({
       users: this.fb.array([])
     })
+
+    this.form.setValue({ users: { firstName: '' } })
 
   }
 

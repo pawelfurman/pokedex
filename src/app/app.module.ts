@@ -13,7 +13,8 @@ import { LayoutModule } from "./features/layout/layout.module"
 import { PokemonModule } from "./features/pokemon/pokemon.module"
 import { DiModule } from './features/di/di.module'
 import { AnimationsModule } from './features/animations/animations.module';
-import { LifecycleModule } from './features/lifecycle/lifecycle.module'
+import { LifecycleModule } from './features/lifecycle/lifecycle.module';
+import { StructuralModule } from './features/structural/structural.module'
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LifecycleModule } from './features/lifecycle/lifecycle.module'
     DiModule,
     AnimationsModule,
     LifecycleModule,
+    StructuralModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

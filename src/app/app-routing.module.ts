@@ -12,6 +12,7 @@ import { PagePokemonDetailComponent } from "./features/pokemon/page-pokemon-deta
 import { PagePokemonDetailResolver } from "./features/pokemon/page-pokemon-detail/page-pokemon.detail.resolver"
 import { PagePokemonListComponent } from "./features/pokemon/page-pokemon-list/page-pokemon-list.component"
 import { PagePokemonListResolver } from "./features/pokemon/page-pokemon-list/page-pokemon-list.resolver"
+import { PageStructuralComponent } from './features/structural/page-structural/page-structural.component'
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: 'lifecycle',
     component: PageLifecycleComponent
+  },
+  {
+    path: 'structural',
+    component: PageStructuralComponent
   },
   {
     path: '**',
